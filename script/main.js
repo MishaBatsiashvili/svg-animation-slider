@@ -213,18 +213,4 @@ var swiper = new Swiper('.swiper-container', {
 
 
 
-
-
-
-
-
-
-
-
-    
-    
-    
-    // tween2.chain(tween);
-    // morphTween22.chain(morphTween23);
-    // morphTween23.chain(morphTween21);
 });
