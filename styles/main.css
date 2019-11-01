@@ -2,15 +2,15 @@
 .polygon-animation{
     position: absolute;
     left: 0;
-    bottom: -5px;
+    bottom: 0;
     width: 100%;
     z-index: 999;
 }
 
 .polygon-animation-2{
     position: absolute;
-    left: 0;
-    top: 0px;
+    left: -6px;
+    top: -5px;
     width: 100%;
     z-index: 999;
 }
