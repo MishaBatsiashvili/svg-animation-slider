@@ -1,6 +1,7 @@
 $(function(){
        
     function svgAnimation (numExt){
+        // BOTTOM LINE
         (function(){
                 var myEasing = 'easingQuarticInOut';
 
@@ -21,13 +22,17 @@ $(function(){
                     {
                         easing: myEasing,
                         duration: 2000,
-                        // delay: 1500,
+                        delay: 1500,
                         start: function(){
-                            originalPath.css('opacity', '1');
+                            setTimeout(function(){
+                                originalPath.animate({
+                                    opacity: 1
+                                }, 100);
+                            }, 1500)
                         },
                         complete: function(){
-                            duplicatePath.css('opacity', '1');
-                            originalPath.css('opacity', '0');
+                            
+                            // originalPath.css('opacity', '0');
                         }
                     }
                 ).start();
@@ -41,101 +46,101 @@ $(function(){
                     {
                         easing: myEasing,
                         duration: 2000,
-                        // delay: 1500,
+                        delay: 1500,
                         start: function(){
-                            
+                            setTimeout(function(){
+                                
+                                duplicatePath.animate({
+                                    opacity: 1
+                                }, 0);
+
+                                originalPath.animate({
+                                    opacity: 0
+                                }, 100);
+
+                            }, 1500);
+
                         },
                         complete: function(){
-                            // duplicatePath.css('opacity', '0');
-                            bottomStep1.start();
+                            originalPath.css('opacity', '0');
                         }
                     }
                 );
 
                 bottomStep1.chain(bottomStep2);
-
-
-
-
-                // const bottomStep2 = KUTE.fromTo(
-                //     '#first-wave'+numExt,
-                //     { draw : '0% 100%' },
-                //     { draw : '0% 0%' },
-                //     {
-                //         easing: myEasing,
-                //         duration: 2000,
-                //         delay: 1500,
-                //     }
-                // );
-
-                // bottomStep1.chain(bottomStep2);
-                // bottomStep2.chain(bottomStep1);
-
-
-                // tween top
-                // const topStep1 = KUTE.fromTo(
-                //     '#first-wave-top'+numExt,
-                //     { draw : '0% 0%' },
-                //     { draw : '0% 100%' },
-                //     {
-                //         easing: myEasing,
-                //         duration: 2000,
-                //     }
-                // );
-
-                // const topStep2 = KUTE.fromTo(
-                //     '#first-wave-top'+numExt,
-                //     { draw : '0% 100%' },
-                //     { draw : '0% 0%' },
-                //     {
-                //         easing: myEasing,
-                //         duration: 2000,
-                //     }
-                // );
-
-                // topStep1.chain(topStep2);
-                // topStep2.chain(topStep2);
-                // tween bottom
-                
-                
-                
-                
-                
-                
-                // const topStep1 = KUTE.fromTo(
-                //     '#first-wave-top'+numExt,
-                //     { draw : '0% 0%' },
-                //     { draw : '0% 100%' },
-                //     {
-                //         easing: myEasing,
-                //         duration: 2000,
-                //         delay: 1500,
-                //         start: function(){
-                //             if($('#first-wave-top'+numExt).css('opacity') === '0'){
-                //                 setTimeout(function(){
-                //                     $('#first-wave-top'+numExt).css('opacity', 1);
-                //                 }, 1500);
-                //             }
-                //         }
-                //     }
-                // ).start();
-
-                // const topStep2 = KUTE.fromTo(
-                //     '#first-wave-top'+numExt,
-                //     { draw : '0% 100%' },
-                //     { draw : '0% 0%' },
-                //     {
-                //         easing: myEasing,
-                //         duration: 2000,
-                //         delay: 1500,
-                //     }
-                // );
-
-                // topStep1.chain(topStep2);
-                // topStep2.chain(topStep1);
-
-
+                bottomStep2.chain(bottomStep1);
         })();
+
+        // TOP LINE
+        (function(){
+            var myEasing = 'easingQuarticInOut';
+
+                var originalPath =$('#first-wave-top'+numExt);
+                var duplicatePath =$('#first-wave-top-duplicate'+numExt);
+                var bufferTime = 100; //compenstates for internal delay between animation start and "start:" event
+
+                // hiding duplicate on default
+                originalPath.css('opacity', '0');
+                duplicatePath.css('opacity', '0');
+
+            
+                // tween bottom
+                const topStep1 = KUTE.fromTo(
+                    '#first-wave-top'+numExt,
+                    { draw : '0% 0%' },
+                    { draw : '0% 100%' },
+                    {
+                        easing: myEasing,
+                        duration: 2000,
+                        delay: 1500,
+                        start: function(){
+                            setTimeout(function(){
+                                originalPath.animate({
+                                    opacity: 1
+                                }, 100);
+                            }, 1500)
+                        },
+                        complete: function(){
+                            
+                            // originalPath.css('opacity', '0');
+                        }
+                    }
+                ).start();
+
+                
+
+                const topStep2 = KUTE.fromTo(
+                    '#first-wave-top-duplicate'+numExt,
+                    { draw : '0% 100%' },
+                    { draw : '0% 0%' },
+                    {
+                        easing: myEasing,
+                        duration: 2000,
+                        delay: 1500,
+                        start: function(){
+                            setTimeout(function(){
+                                
+                                duplicatePath.animate({
+                                    opacity: 1
+                                }, 0);
+
+                                originalPath.animate({
+                                    opacity: 0
+                                }, 100);
+
+                            }, 1500);
+
+                        },
+                        complete: function(){
+                            originalPath.css('opacity', '0');
+                        }
+                    }
+                );
+
+                topStep1.chain(topStep2);
+                topStep2.chain(topStep1);
+        })();
+
     }
 
 
@@ -143,7 +148,7 @@ $(function(){
         return `
         <div class='polygon-animation-2'>
             <svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="414 237 1440 320" style="enable-background:new 414 237 1440 320;" xml:space="preserve">
+            viewBox="360 561 1440 320" style="enable-background:new 360 561 1440 320;" xml:space="preserve">
                 <style type="text/css">
                     .st0{
                         fill: transparent;
@@ -158,7 +163,8 @@ $(function(){
                     }
                 </style>
         
-                <path id="first-wave-top${numExt}" class="st0" d="M414,458.6l220.6-31.5l248,57l274.5-81l123-111l319-55.1"/>
+                <path id="first-wave-top${numExt}" class="st0" d="M360,782.6l220.6-31.5l248,57l274.5-81l123-111l319-55.1"/>
+                <path id="first-wave-top-duplicate${numExt}" class="st0" d="M1545.1,561l-319,55.1l-123,111l-274.5,81l-248-57L360,782.6"/>
                 
                 
             </svg>

@@ -68,7 +68,7 @@ html, body {
 
   .slide-scale{
     animation-name: scaleAnimation;
-    animation-duration: 30s;
+    animation-duration: 20s;
   }
 
   @-webkit-keyframes scaleAnimation {
