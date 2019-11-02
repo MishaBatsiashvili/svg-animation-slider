@@ -103,35 +103,32 @@ $(function(){
         return `
         <div class='polygon-animation-2'>
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 1440 320" style="enable-background:new 0 0 1440 320;" xml:space="preserve">
+            viewBox="360 561 1440 320" style="enable-background:new 360 561 1440 320;" xml:space="preserve">
                 <style type="text/css">
                     .st0{
                         fill:#fff;
-                        fill-opacity: 0.8;
+                        fill-opacity: 0.6;
                     }
                     .st1{visibility:hidden; fill:#0099FF; fill-opacity:0.7;}
                 </style>
-        
-                <path id="first-wave-top${numExt}" class="st0" d="M0,0h1185.1l-66,32.6l-387,73.5l-325.5,141l-186-57L0,221.6V0z"/>
-                <path id="second-wave-top${numExt}" class="st1" d="M0,0h1185.1l-66,32.6l-337.5,36l-267,135l-253.5-33L0,221.6V0z"/>
-                <path id="third-wave-top${numExt}" class="st1" d="M0,0h1185.1l-66,32.6l-291,40.5l-316.5,156l-300-78L0,221.6V0z"/>
-                <path id="first-wave-duplicate-top${numExt}" class="st1" d="M0,0h1185.1l-66,32.6l-387,73.5l-325.5,141l-186-57L0,221.6V0z"/>
+
+                <path id="first-wave-top${numExt}" class="st0" d="M360,561h1185.1l-69.1,25l-263,21l-312,73l-270-19l-271,75V561z"/>
+                <path id="first-wave-duplicate-top${numExt}" class="st1" d="M360,561h1185.1l-69.1,25l-263,21l-312,73l-270-19l-271,75V561z"/>
+                <path id="second-wave-top${numExt}" class="st1" d="M360,561h1185.1l-70.1,43l-263-5l-211,79l-360-18l-281,76V561z"/>
+                <path id="third-wave-top${numExt}" class="st1" d="M360,561h1185.1l-66,32.6L1220,617l-194,79l-388-21l-278,61V561z"/>
                 
             </svg>
         </div>
         
         <div class='polygon-animation'>
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="240 121 1440 320" style="enable-background:new 240 121 1440 320;" xml:space="preserve">
-                <style type="text/css">
-                    .st0{fill:#fff;fill-opacity: 0.8;}
-                    .st1{visibility:hidden; fill:#0099FF; fill-opacity:0.7;}
-                </style>
-        
-                <path id="first-wave${numExt}" class="st0" d="M588.7,441L771,417l189-26.4l272.1-1.5l307.3-99.6l140.6,36.6V441H755.3H588.7z"/>
-                <path id="second-wave${numExt}" class="st1" d="M588.7,441L771,417l202-46l300-10l301-80l106,45.1V441H755.3H588.7z"/>
-                <path id="third-wave${numExt}" class="st1" d="M588.7,441L771,417l151-63l327,4l240-62l191,30.1V441H755.3H588.7z"/>
-                <path id="first-wave-duplicate${numExt}" class="st1" d="M588.7,441L771,417l189-26.4l272.1-1.5l307.3-99.6l140.6,36.6V441H755.3H588.7z"/>
+            viewBox="360 561 1440 320" style="enable-background:new 240 121 1440 320;" xml:space="preserve">
+    
+                <path id="first-wave${numExt}" class="st0" d="M708.7,881L891,857l189-26.4l272.1-1.5l307.3-99.6l140.6-18.9V881H875.3H708.7z"/>
+                <path id="first-wave-duplicate${numExt}" class="st1" d="M708.7,881L891,857l189-26.4l272.1-1.5l307.3-99.6l140.6-18.9V881H875.3H708.7z"/>
+                <path id="second-wave${numExt}" class="st1" d="M708.7,881L891,857l202-46l300-10l301-80l106-46.4V881H875.3H708.7z"/>
+                <path id="third-wave${numExt}" class="st1" d="M708.7,881L891,857l151-63l327,4l240-62l191-77.9V881H875.3H708.7z"/>
+
                 
             </svg>
         </div>`;
